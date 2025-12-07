@@ -86,7 +86,7 @@ const HeroSection: React.FC = () => {
         >
           <video
             ref={videoRef}
-            src="/media/Portfolio/motion-final.mov"
+            src="/media/portfolio/motion-final.mov"
             className="w-full h-[400px] md:h-[500px] object-cover rounded-xl shadow-lg"
             loop
             muted
