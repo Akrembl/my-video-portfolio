@@ -8,7 +8,6 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: "/my-video-portfolio/",  // <-- THIS MUST BE HERE
   plugins: [
     react(),
     mode === "development" && componentTagger(),
