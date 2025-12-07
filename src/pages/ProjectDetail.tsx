@@ -9,14 +9,14 @@ const projectMediaMap: Record<string, { title: string; description: string; medi
     description:
       "Produced a series of dynamic videos and photos showcasing Amazir’s vibrant atmosphere, modern decor, and the pizza chef’s skills. The content was crafted to connect with young adults by highlighting the restaurant’s energy, style, and unique vibe across multiple engaging visuals.",
     media: [
-      "/media/Portfolio/amazir/AMAZIR boomerang.mov",
-      "/media/Portfolio/amazir/AMAZIR bullet zooms.mov",
-      "/media/Portfolio/amazir/AMAZIR make enjoy.mp4",
-      "/media/Portfolio/amazir/AMAZIR OP FULL.mp4",
-      "/media/Portfolio/amazir/AMAZIR OP nou r 2.mp4",
-      "/media/Portfolio/amazir/DSCF0362.jpg",
-      "/media/Portfolio/amazir/DSCF0363.jpg",
-      "/media/Portfolio/amazir/DSCF0525.jpg",
+      "/media/Portfolio/amazir/amazir-boomerang.mov",
+      "/media/Portfolio/amazir/amazir-bullet-zooms.mov",
+      "/media/Portfolio/amazir/amazir-make-enjoy.mp4",
+      "/media/Portfolio/amazir/amazir-op-full.mp4",
+      "/media/Portfolio/amazir/amazir-op-nou-r-2.mp4",
+      "/media/Portfolio/amazir/mur1.jpg",
+      "/media/Portfolio/amazir/mur2.jpg",
+      "/media/Portfolio/amazir/mur3.jpg",
       "/media/Portfolio/amazir/ld-export-9bd137ca-07282025.jpg",
       "/media/Portfolio/amazir/ld-export-b665cdd1-07282025.jpg",
       "/media/Portfolio/amazir/ld-export-bd40fef6-07282025.jpg",
@@ -28,10 +28,10 @@ const projectMediaMap: Record<string, { title: string; description: string; medi
     description:
       "Produced a visual campaign showcasing Ayla Brand’s new collection and in-store experience. The project features three videos highlighting the clothing details, styling, and overall aesthetic of the brand, capturing a clean and modern fashion vibe to engage their audience.",
     media: [
-      "/media/Portfolio/ayla/ayla outfit 3.mov",
-      "/media/Portfolio/ayla/ayla outfit 9 black.mov",
-      "/media/Portfolio/ayla/ayla store final.mov",
-      "/media/Portfolio/ayla/dhaw hal final.mp4",
+      "/media/Portfolio/ayla/ayla-outfit-3.mov",
+      "/media/Portfolio/ayla/ayla-outfit-9-black.mov",
+      "/media/Portfolio/ayla/ayla-store-final.mov",
+      "/media/Portfolio/ayla/dhaw-hal-final.mp4",
     ],
   },
   "another-vision": {
@@ -39,10 +39,10 @@ const projectMediaMap: Record<string, { title: string; description: string; medi
     description:
       "A showcase of the recent projects I created while working with Another Vision Production. This section highlights a mix of commercial and creative pieces, reflecting my role in shooting, editing, and bringing each production to life as part of the team.",
     media: [
-      "/media/Portfolio/sounine/sounine park 1.mov",
-      "/media/Portfolio/sounine/sounine park 3.mov",
-      "/media/Portfolio/sounine/sounine park 4.mov",
-      "/media/Portfolio/sounine/sounine park 5.mov",
+      "/media/Portfolio/sounine/sounine-park-1.mov",
+      "/media/Portfolio/sounine/sounine-park-3.mov",
+      "/media/Portfolio/sounine/sounine-park-4.mov",
+      "/media/Portfolio/sounine/sounine-park-5.mov",
       "https://www.youtube.com/watch?v=retuQbW2f6Y",
       "/media/Portfolio/sounine/pic1.jpg",
       "/media/Portfolio/sounine/pic2.jpg",
@@ -55,22 +55,22 @@ const projectMediaMap: Record<string, { title: string; description: string; medi
     description:
       "A multi-frame presentation demonstrating my color grading process across four different shots. Each frame includes the original S-Log image, a basic Rec.709 conversion, and the final graded version, along with a screenshot of the full node tree. This project highlights my workflow, technical approach, and ability to craft polished, cinematic looks.",
     media: [
-      "/media/Portfolio/color-gradiant/v raptor before.jpg",
-      "/media/Portfolio/color-gradiant/v raptor r709_1.1.1.T.jpg",
-      "/media/Portfolio/color-gradiant/v raptor after.jpg",
-      "/media/Portfolio/color-gradiant/v raptor node tree.png",
-      "/media/Portfolio/color-gradiant/C slog before_1.1.3.jpg",
-      "/media/Portfolio/color-gradiant/C slog rec709_1.1.2.jpg",
-      "/media/Portfolio/color-gradiant/C slog after_1.1.1.jpg",
-      "/media/Portfolio/color-gradiant/C slog node tree.png",
-      "/media/Portfolio/color-gradiant/B slog before.jpg",
-      "/media/Portfolio/color-gradiant/B slog rec709.jpg",
-      "/media/Portfolio/color-gradiant/B slog after_1.1.1.jpg",
-      "/media/Portfolio/color-gradiant/B slog node tree.png",
-      "/media/Portfolio/color-gradiant/A slog before.jpg",
-      "/media/Portfolio/color-gradiant/A slog rec709.jpg",
-      "/media/Portfolio/color-gradiant/A slog after.jpg",
-      "/media/Portfolio/color-gradiant/A slog node tree.png",
+      "/media/Portfolio/color-gradiant/v-raptor-before.jpg",
+      "/media/Portfolio/color-gradiant/v-raptor-r709_1.1.1.t.jpg",
+      "/media/Portfolio/color-gradiant/v-raptor-after.jpg",
+      "/media/Portfolio/color-gradiant/v-raptor-node-tree.png",
+      "/media/Portfolio/color-gradiant/c-slog-before_1.1.3.jpg",
+      "/media/Portfolio/color-gradiant/c-slog-rec709_1.1.2.jpg",
+      "/media/Portfolio/color-gradiant/c-slog-after_1.1.1.jpg",
+      "/media/Portfolio/color-gradiant/c-slog-node-tree.png",
+      "/media/Portfolio/color-gradiant/b-slog-before.jpg",
+      "/media/Portfolio/color-gradiant/b-slog-rec709.jpg",
+      "/media/Portfolio/color-gradiant/b-slog-after_1.1.1.jpg",
+      "/media/Portfolio/color-gradiant/b-slog-node-tree.png",
+      "/media/Portfolio/color-gradiant/a-slog-before.jpg",
+      "/media/Portfolio/color-gradiant/a-slog-rec709.jpg",
+      "/media/Portfolio/color-gradiant/a-slog-after.jpg",
+      "/media/Portfolio/color-gradiant/a-slog-node-tree.png",
     ],
   },
   "personal-projects": {
@@ -78,7 +78,7 @@ const projectMediaMap: Record<string, { title: string; description: string; medi
     description:
       "A collection of self-initiated videos created for fun and exploration. These projects let me try new techniques, test ideas, and push my creativity without any brief or limitations.",
     media: [
-      "/media/Portfolio/personal-projects/dhaw hal final.mp4",
+      "/media/Portfolio/personal-projects/dhaw-hal-final.mp4",
       "https://www.youtube.com/watch?v=HtTlBbgZNGk",
     ],
   },
@@ -100,19 +100,16 @@ const getYouTubeThumbnail = (url: string) => {
   return match ? `https://img.youtube.com/vi/${match[1]}/hqdefault.jpg` : undefined;
 };
 
-// Encode media URLs safely for deployment
-const safeSrc = (src: string) => encodeURI(src);
-
 const ProjectDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const proj = slug ? projectMediaMap[slug] : undefined;
   if (!proj) return <div className="p-8 text-center text-gray-500">Project not found</div>;
 
   const isColorGradiant = slug === "color-gradiant";
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const handleVideoClick = (i: number) => {
     videoRefs.current.forEach((v, idx) => {
@@ -163,14 +160,12 @@ const ProjectDetail: React.FC = () => {
                 href={src}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`relative w-full overflow-hidden rounded-xl shadow-lg group cursor-pointer transition-transform hover:scale-105`}
+                className="relative w-full overflow-hidden rounded-xl shadow-lg group cursor-pointer transition-transform hover:scale-105"
               >
                 <img
                   src={youtubeThumb || "/fallback-thumbnail.jpg"}
                   alt="External Link"
-                  className={`w-full rounded-xl ${
-                    isColorGradiant ? "h-56 object-cover" : "h-auto object-contain"
-                  }`}
+                  className={`w-full rounded-xl ${isColorGradiant ? "h-56 object-cover" : "h-auto object-contain"}`}
                 />
                 {youtubeThumb && (
                   <div className="absolute bottom-3 right-3 bg-red-600 text-white text-xs px-2 py-1 rounded shadow">
@@ -193,21 +188,17 @@ const ProjectDetail: React.FC = () => {
               {isVideo ? (
                 <video
                   ref={(el) => (videoRefs.current[i] = el)}
-                  src={safeSrc(src)}
-                  className={`rounded-xl ${
-                    isColorGradiant ? "w-full h-56 object-cover" : "w-full h-auto"
-                  }`}
+                  src={src}
+                  className={`rounded-xl ${isColorGradiant ? "w-full h-56 object-cover" : "w-full h-auto"}`}
                   muted
                   loop
                   playsInline
                 />
               ) : (
                 <img
-                  src={safeSrc(src)}
+                  src={src}
                   alt={`${proj.title}-${i}`}
-                  className={`rounded-xl ${
-                    isColorGradiant ? "w-full h-56 object-cover" : "w-full h-auto object-contain"
-                  }`}
+                  className={`rounded-xl ${isColorGradiant ? "w-full h-56 object-cover" : "w-full h-auto object-contain"}`}
                 />
               )}
               {label && (
@@ -227,14 +218,14 @@ const ProjectDetail: React.FC = () => {
           <div className="relative z-50 w-[85vw] h-[85vh] flex items-center justify-center rounded-xl overflow-hidden shadow-2xl bg-black">
             {/\.(mp4|webm|mov)$/i.test(proj.media[expandedIndex]) ? (
               <video
-                src={safeSrc(proj.media[expandedIndex])}
+                src={proj.media[expandedIndex]}
                 className="w-full h-full object-contain"
                 controls
                 autoPlay
               />
             ) : (
               <img
-                src={safeSrc(proj.media[expandedIndex])}
+                src={proj.media[expandedIndex]}
                 alt={`${proj.title}-${expandedIndex}`}
                 className="w-full h-full object-contain"
               />

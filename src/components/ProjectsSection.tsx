@@ -10,42 +10,39 @@ interface Project {
   thumbnailUrl: string;
 }
 
-// Encode URLs safely for deployment
-const safeSrc = (src: string) => encodeURI(src);
-
 const ProjectsSection: React.FC = () => {
   const projects: Project[] = [
     {
       slug: "amazir",
       title: "Amazir – Visual Content Series",
       description: "branding and promotional content for Amazir restaurant",
-      thumbnailUrl: "/media/Portfolio/amazir/AMAZIR boomerang.mov",
+      thumbnailUrl: "/media/Portfolio/amazir/amazir-boomerang.mov",
     },
     {
       slug: "ayla",
       title: "Ayla Brand – Clothing Campaign",
-      description: "Clothing compaign for Ayla",
-      thumbnailUrl: "/media/Portfolio/ayla/ayla store final.mov",
+      description: "Clothing campaign for Ayla",
+      thumbnailUrl: "/media/Portfolio/ayla/ayla-store-final.mov",
     },
     {
       slug: "another-vision",
       title: "Another Vision Production – Selected Work",
       description: "production work done at Another Vision Production",
-      thumbnailUrl: "/media/Portfolio/sounine/sounine park 1.mov",
+      thumbnailUrl: "/media/Portfolio/sounine/sounine-park-1.mov",
     },
     {
       slug: "color-gradiant",
       title: "Color Grading Showcase – DaVinci Resolve",
       description: "several color grading examples",
-      thumbnailUrl: "/media/Portfolio/color-gradiant/A slog after.jpg",
+      thumbnailUrl: "/media/Portfolio/color-gradiant/a-slog-after.jpg",
     },
     {
       slug: "personal-projects",
       title: "Personal Projects – Creative Experiments",
       description: "A collection of self-initiated videos and edits",
-      thumbnailUrl: "/media/Portfolio/personal-projects/dhaw hal final.mp4",
+      thumbnailUrl: "/media/Portfolio/personal-projects/dhaw-hal-final.mp4",
     },
-    // add more projects ...
+    // add more projects as needed
   ];
 
   const cardVariants = {
@@ -91,7 +88,7 @@ const ProjectsSection: React.FC = () => {
                   {isVideo ? (
                     <video
                       ref={videoRef}
-                      src={safeSrc(project.thumbnailUrl)}
+                      src={project.thumbnailUrl}
                       className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
                       muted
                       loop
@@ -101,7 +98,7 @@ const ProjectsSection: React.FC = () => {
                     />
                   ) : (
                     <img
-                      src={safeSrc(project.thumbnailUrl)}
+                      src={project.thumbnailUrl}
                       alt={project.title}
                       className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
                     />
