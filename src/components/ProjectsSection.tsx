@@ -10,6 +10,9 @@ interface Project {
   thumbnailUrl: string;
 }
 
+// Encode URLs safely for deployment
+const safeSrc = (src: string) => encodeURI(src);
+
 const ProjectsSection: React.FC = () => {
   const projects: Project[] = [
     {
@@ -88,7 +91,7 @@ const ProjectsSection: React.FC = () => {
                   {isVideo ? (
                     <video
                       ref={videoRef}
-                      src={project.thumbnailUrl}
+                      src={safeSrc(project.thumbnailUrl)}
                       className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
                       muted
                       loop
@@ -98,7 +101,7 @@ const ProjectsSection: React.FC = () => {
                     />
                   ) : (
                     <img
-                      src={project.thumbnailUrl}
+                      src={safeSrc(project.thumbnailUrl)}
                       alt={project.title}
                       className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
                     />

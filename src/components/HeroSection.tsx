@@ -5,6 +5,9 @@ import { ArrowRight, Mail } from 'lucide-react';
 const HeroSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  // Encode URLs safely for deployment
+  const safeSrc = (src: string) => encodeURI(src);
+
   // Auto play / pause when visible
   useEffect(() => {
     const video = videoRef.current;
@@ -12,7 +15,7 @@ const HeroSection: React.FC = () => {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) video.play().catch(() => { });
+        if (entry.isIntersecting) video.play().catch(() => {});
         else video.pause();
       },
       { threshold: 0.5 }
@@ -58,11 +61,11 @@ const HeroSection: React.FC = () => {
           <motion.a
             href="#contact"
             className="
-    inline-flex items-center gap-2 
-    px-3 py-2 rounded-full
-    shadow-lg border border-black bg-white font-semibold
-    transition-all duration-300 hover:shadow-xl hover:-translate-y-1
-  "
+              inline-flex items-center gap-2 
+              px-3 py-2 rounded-full
+              shadow-lg border border-black bg-white font-semibold
+              transition-all duration-300 hover:shadow-xl hover:-translate-y-1
+            "
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
@@ -72,8 +75,6 @@ const HeroSection: React.FC = () => {
             <Mail className="w-4 h-4" />
             Contact Me
           </motion.a>
-
-
 
         </motion.div>
 
@@ -86,7 +87,7 @@ const HeroSection: React.FC = () => {
         >
           <video
             ref={videoRef}
-            src="/media/Portfolio/motion final.mov"
+            src={safeSrc("/media/Portfolio/motion-final.mov")}
             className="w-full h-[400px] md:h-[500px] object-cover rounded-xl shadow-lg"
             loop
             muted

@@ -71,9 +71,6 @@ const projectMediaMap: Record<string, { title: string; description: string; medi
       "/media/Portfolio/color-gradiant/A slog rec709.jpg",
       "/media/Portfolio/color-gradiant/A slog after.jpg",
       "/media/Portfolio/color-gradiant/A slog node tree.png",
-
-
-
     ],
   },
   "personal-projects": {
@@ -91,7 +88,7 @@ const projectMediaMap: Record<string, { title: string; description: string; medi
 const getStageLabel = (filename: string) => {
   const lower = filename.toLowerCase();
   if (lower.includes("before")) return "Before";
-  if (lower.includes("rec709")||lower.includes("r709")) return "Rec709";
+  if (lower.includes("rec709") || lower.includes("r709")) return "Rec709";
   if (lower.includes("after")) return "After";
   if (lower.includes("node")) return "Node Tree";
   return "";
@@ -102,6 +99,9 @@ const getYouTubeThumbnail = (url: string) => {
   const match = url.match(/v=([^&]+)/);
   return match ? `https://img.youtube.com/vi/${match[1]}/hqdefault.jpg` : undefined;
 };
+
+// Encode media URLs safely for deployment
+const safeSrc = (src: string) => encodeURI(src);
 
 const ProjectDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -145,10 +145,9 @@ const ProjectDetail: React.FC = () => {
 
       {/* Media Grid */}
       <div
-        className={`grid gap-6 ${isColorGradiant
-            ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
-            : "grid-cols-1 sm:grid-cols-2"
-          }`}
+        className={`grid gap-6 ${
+          isColorGradiant ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" : "grid-cols-1 sm:grid-cols-2"
+        }`}
       >
         {proj.media.map((src, i) => {
           const isVideo = /\.(mp4|webm|mov)$/i.test(src);
@@ -169,8 +168,9 @@ const ProjectDetail: React.FC = () => {
                 <img
                   src={youtubeThumb || "/fallback-thumbnail.jpg"}
                   alt="External Link"
-                  className={`w-full rounded-xl ${isColorGradiant ? "h-56 object-cover" : "h-auto object-contain"
-                    }`}
+                  className={`w-full rounded-xl ${
+                    isColorGradiant ? "h-56 object-cover" : "h-auto object-contain"
+                  }`}
                 />
                 {youtubeThumb && (
                   <div className="absolute bottom-3 right-3 bg-red-600 text-white text-xs px-2 py-1 rounded shadow">
@@ -193,19 +193,21 @@ const ProjectDetail: React.FC = () => {
               {isVideo ? (
                 <video
                   ref={(el) => (videoRefs.current[i] = el)}
-                  src={src}
-                  className={`rounded-xl ${isColorGradiant ? "w-full h-56 object-cover" : "w-full h-auto"
-                    }`}
+                  src={safeSrc(src)}
+                  className={`rounded-xl ${
+                    isColorGradiant ? "w-full h-56 object-cover" : "w-full h-auto"
+                  }`}
                   muted
                   loop
                   playsInline
                 />
               ) : (
                 <img
-                  src={src}
+                  src={safeSrc(src)}
                   alt={`${proj.title}-${i}`}
-                  className={`rounded-xl ${isColorGradiant ? "w-full h-56 object-cover" : "w-full h-auto object-contain"
-                    }`}
+                  className={`rounded-xl ${
+                    isColorGradiant ? "w-full h-56 object-cover" : "w-full h-auto object-contain"
+                  }`}
                 />
               )}
               {label && (
@@ -225,14 +227,14 @@ const ProjectDetail: React.FC = () => {
           <div className="relative z-50 w-[85vw] h-[85vh] flex items-center justify-center rounded-xl overflow-hidden shadow-2xl bg-black">
             {/\.(mp4|webm|mov)$/i.test(proj.media[expandedIndex]) ? (
               <video
-                src={proj.media[expandedIndex]}
+                src={safeSrc(proj.media[expandedIndex])}
                 className="w-full h-full object-contain"
                 controls
                 autoPlay
               />
             ) : (
               <img
-                src={proj.media[expandedIndex]}
+                src={safeSrc(proj.media[expandedIndex])}
                 alt={`${proj.title}-${expandedIndex}`}
                 className="w-full h-full object-contain"
               />
