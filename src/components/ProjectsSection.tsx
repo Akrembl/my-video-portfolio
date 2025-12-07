@@ -16,31 +16,31 @@ const ProjectsSection: React.FC = () => {
       slug: "amazir",
       title: "Amazir – Visual Content Series",
       description: "branding and promotional content for Amazir restaurant",
-      thumbnailUrl: "/media/portfolio/amazir/amazir-boomerang.mov",
+      thumbnailUrl: "/my-video-portfolio/media/portfolio/amazir/amazir-boomerang.mov",
     },
     {
       slug: "ayla",
       title: "Ayla Brand – Clothing Campaign",
       description: "Clothing campaign for Ayla",
-      thumbnailUrl: "/media/portfolio/ayla/ayla-store-final.mov",
+      thumbnailUrl: "/my-video-portfolio/media/portfolio/ayla/ayla-store-final.mov",
     },
     {
       slug: "another-vision",
       title: "Another Vision Production – Selected Work",
       description: "production work done at Another Vision Production",
-      thumbnailUrl: "/media/portfolio/sounine/sounine-park-1.mov",
+      thumbnailUrl: "/my-video-portfolio/media/portfolio/sounine/sounine-park-1.mov",
     },
     {
       slug: "color-gradiant",
       title: "Color Grading Showcase – DaVinci Resolve",
       description: "several color grading examples",
-      thumbnailUrl: "/media/portfolio/color-gradiant/a-slog-after.jpg",
+      thumbnailUrl: "/my-video-portfolio/media/portfolio/color-gradiant/a-slog-after.jpg",
     },
     {
       slug: "personal-projects",
       title: "Personal Projects – Creative Experiments",
       description: "A collection of self-initiated videos and edits",
-      thumbnailUrl: "/media/portfolio/personal-projects/dhaw-hal-final.mp4",
+      thumbnailUrl: "/my-video-portfolio/media/portfolio/personal-projects/dhaw-hal-final.mp4",
     },
     // add more projects as needed
   ];
