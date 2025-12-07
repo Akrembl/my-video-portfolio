@@ -8,7 +8,11 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base:"/",
+  base: "/",
+
+  // 🔥 FIX → ensure public/ is included in the build
+  publicDir: "public",
+
   plugins: [
     react(),
     mode === "development" && componentTagger(),
