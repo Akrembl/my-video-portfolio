@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base:"/my-viedo-portfolio/",
+  base:"/",
   plugins: [
     react(),
     mode === "development" && componentTagger(),
