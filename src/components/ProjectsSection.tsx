@@ -11,36 +11,39 @@ interface Project {
 }
 
 const ProjectsSection: React.FC = () => {
+  // Helper to get correct media URL
+  const getMediaUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+
   const projects: Project[] = [
     {
       slug: "amazir",
       title: "Amazir – Visual Content Series",
       description: "branding and promotional content for Amazir restaurant",
-      thumbnailUrl: "/my-video-portfolio/media/portfolio/amazir/amazir-boomerang.mov",
+      thumbnailUrl: getMediaUrl("media/portfolio/amazir/amazir-boomerang.mov"),
     },
     {
       slug: "ayla",
       title: "Ayla Brand – Clothing Campaign",
       description: "Clothing campaign for Ayla",
-      thumbnailUrl: "/my-video-portfolio/media/portfolio/ayla/ayla-store-final.mov",
+      thumbnailUrl: getMediaUrl("media/portfolio/ayla/ayla-store-final.mov"),
     },
     {
       slug: "another-vision",
       title: "Another Vision Production – Selected Work",
       description: "production work done at Another Vision Production",
-      thumbnailUrl: "/my-video-portfolio/media/portfolio/sounine/sounine-park-1.mov",
+      thumbnailUrl: getMediaUrl("media/portfolio/sounine/sounine-park-1.mov"),
     },
     {
       slug: "color-gradiant",
       title: "Color Grading Showcase – DaVinci Resolve",
       description: "several color grading examples",
-      thumbnailUrl: "/my-video-portfolio/media/portfolio/color-gradiant/a-slog-after.jpg",
+      thumbnailUrl: getMediaUrl("media/portfolio/color-gradiant/a-slog-after.jpg"),
     },
     {
       slug: "personal-projects",
       title: "Personal Projects – Creative Experiments",
       description: "A collection of self-initiated videos and edits",
-      thumbnailUrl: "/my-video-portfolio/media/portfolio/personal-projects/dhaw-hal-final.mp4",
+      thumbnailUrl: getMediaUrl("media/portfolio/personal-projects/dhaw-hal-final.mp4"),
     },
     // add more projects as needed
   ];
@@ -50,8 +53,8 @@ const ProjectsSection: React.FC = () => {
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" }
-    })
+      transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" },
+    }),
   };
 
   return (

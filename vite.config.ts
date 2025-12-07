@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: "/my-video-portfolio/",
+   base: "/my-video-portfolio/",
 
   // 🔥 FIX → ensure public/ is included in the build
   publicDir: "public",

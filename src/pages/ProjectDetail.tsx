@@ -1,26 +1,31 @@
-// src/pages/ProjectDetail.tsx
 import React, { useRef, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
+// Helper to get correct media URL for GitHub Pages
+const getMediaUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+
 // Project metadata
-const projectMediaMap: Record<string, { title: string; description: string; media: string[] }> = {
+const projectMediaMap: Record<
+  string,
+  { title: string; description: string; media: string[] }
+> = {
   amazir: {
     title: "Amazir – Visual Content Series",
     description:
       "Produced a series of dynamic videos and photos showcasing Amazir’s vibrant atmosphere, modern decor, and the pizza chef’s skills. The content was crafted to connect with young adults by highlighting the restaurant’s energy, style, and unique vibe across multiple engaging visuals.",
     media: [
-      "/media/portfolio/amazir/amazir-boomerang.mov",
-      "/media/portfolio/amazir/amazir-bullet-zooms.mov",
-      "/media/portfolio/amazir/amazir-make-enjoy.mp4",
-      "/media/portfolio/amazir/amazir-op-full.mp4",
-      "/media/portfolio/amazir/amazir-op-nou-r-2.mp4",
-      "/media/portfolio/amazir/mur1.jpg",
-      "/media/portfolio/amazir/mur2.jpg",
-      "/media/portfolio/amazir/mur3.jpg",
-      "/media/portfolio/amazir/ld-export-9bd137ca-07282025.jpg",
-      "/media/portfolio/amazir/ld-export-b665cdd1-07282025.jpg",
-      "/media/portfolio/amazir/ld-export-bd40fef6-07282025.jpg",
-      "/media/portfolio/amazir/ld-export-bdc53526-07282025.jpg",
+      getMediaUrl("media/portfolio/amazir/amazir-boomerang.mov"),
+      getMediaUrl("media/portfolio/amazir/amazir-bullet-zooms.mov"),
+      getMediaUrl("media/portfolio/amazir/amazir-make-enjoy.mp4"),
+      getMediaUrl("media/portfolio/amazir/amazir-op-full.mp4"),
+      getMediaUrl("media/portfolio/amazir/amazir-op-nou-r-2.mp4"),
+      getMediaUrl("media/portfolio/amazir/mur1.jpg"),
+      getMediaUrl("media/portfolio/amazir/mur2.jpg"),
+      getMediaUrl("media/portfolio/amazir/mur3.jpg"),
+      getMediaUrl("media/portfolio/amazir/ld-export-9bd137ca-07282025.jpg"),
+      getMediaUrl("media/portfolio/amazir/ld-export-b665cdd1-07282025.jpg"),
+      getMediaUrl("media/portfolio/amazir/ld-export-bd40fef6-07282025.jpg"),
+      getMediaUrl("media/portfolio/amazir/ld-export-bdc53526-07282025.jpg"),
     ],
   },
   ayla: {
@@ -28,10 +33,10 @@ const projectMediaMap: Record<string, { title: string; description: string; medi
     description:
       "Produced a visual campaign showcasing Ayla Brand’s new collection and in-store experience. The project features three videos highlighting the clothing details, styling, and overall aesthetic of the brand, capturing a clean and modern fashion vibe to engage their audience.",
     media: [
-      "/media/portfolio/ayla/ayla-outfit-3.mov",
-      "/media/portfolio/ayla/ayla-outfit-9-black.mov",
-      "/media/portfolio/ayla/ayla-store-final.mov",
-      "/media/portfolio/ayla/dhaw-hal-final.mp4",
+      getMediaUrl("media/portfolio/ayla/ayla-outfit-3.mov"),
+      getMediaUrl("media/portfolio/ayla/ayla-outfit-9-black.mov"),
+      getMediaUrl("media/portfolio/ayla/ayla-store-final.mov"),
+      getMediaUrl("media/portfolio/ayla/dhaw-hal-final.mp4"),
     ],
   },
   "another-vision": {
@@ -39,15 +44,15 @@ const projectMediaMap: Record<string, { title: string; description: string; medi
     description:
       "A showcase of the recent projects I created while working with Another Vision Production. This section highlights a mix of commercial and creative pieces, reflecting my role in shooting, editing, and bringing each production to life as part of the team.",
     media: [
-      "/media/portfolio/sounine/sounine-park-1.mov",
-      "/media/portfolio/sounine/sounine-park-3.mov",
-      "/media/portfolio/sounine/sounine-park-4.mov",
-      "/media/portfolio/sounine/sounine-park-5.mov",
+      getMediaUrl("media/portfolio/sounine/sounine-park-1.mov"),
+      getMediaUrl("media/portfolio/sounine/sounine-park-3.mov"),
+      getMediaUrl("media/portfolio/sounine/sounine-park-4.mov"),
+      getMediaUrl("media/portfolio/sounine/sounine-park-5.mov"),
       "https://www.youtube.com/watch?v=retuQbW2f6Y",
-      "/media/portfolio/sounine/pic1.jpg",
-      "/media/portfolio/sounine/pic2.jpg",
-      "/media/portfolio/sounine/pic3.jpg",
-      "/media/portfolio/sounine/pic4.jpg",
+      getMediaUrl("media/portfolio/sounine/pic1.jpg"),
+      getMediaUrl("media/portfolio/sounine/pic2.jpg"),
+      getMediaUrl("media/portfolio/sounine/pic3.jpg"),
+      getMediaUrl("media/portfolio/sounine/pic4.jpg"),
     ],
   },
   "color-gradiant": {
@@ -55,22 +60,22 @@ const projectMediaMap: Record<string, { title: string; description: string; medi
     description:
       "A multi-frame presentation demonstrating my color grading process across four different shots. Each frame includes the original S-Log image, a basic Rec.709 conversion, and the final graded version, along with a screenshot of the full node tree. This project highlights my workflow, technical approach, and ability to craft polished, cinematic looks.",
     media: [
-      "/media/portfolio/color-gradiant/v-raptor-before.jpg",
-      "/media/portfolio/color-gradiant/v-raptor-r709_1.1.1.t.jpg",
-      "/media/portfolio/color-gradiant/v-raptor-after.jpg",
-      "/media/portfolio/color-gradiant/v-raptor-node-tree.png",
-      "/media/portfolio/color-gradiant/c-slog-before_1.1.3.jpg",
-      "/media/portfolio/color-gradiant/c-slog-rec709_1.1.2.jpg",
-      "/media/portfolio/color-gradiant/c-slog-after_1.1.1.jpg",
-      "/media/portfolio/color-gradiant/c-slog-node-tree.png",
-      "/media/portfolio/color-gradiant/b-slog-before.jpg",
-      "/media/portfolio/color-gradiant/b-slog-rec709.jpg",
-      "/media/portfolio/color-gradiant/b-slog-after_1.1.1.jpg",
-      "/media/portfolio/color-gradiant/b-slog-node-tree.png",
-      "/media/portfolio/color-gradiant/a-slog-before.jpg",
-      "/media/portfolio/color-gradiant/a-slog-rec709.jpg",
-      "/media/portfolio/color-gradiant/a-slog-after.jpg",
-      "/media/portfolio/color-gradiant/a-slog-node-tree.png",
+      getMediaUrl("media/portfolio/color-gradiant/v-raptor-before.jpg"),
+      getMediaUrl("media/portfolio/color-gradiant/v-raptor-r709_1.1.1.t.jpg"),
+      getMediaUrl("media/portfolio/color-gradiant/v-raptor-after.jpg"),
+      getMediaUrl("media/portfolio/color-gradiant/v-raptor-node-tree.png"),
+      getMediaUrl("media/portfolio/color-gradiant/c-slog-before_1.1.3.jpg"),
+      getMediaUrl("media/portfolio/color-gradiant/c-slog-rec709_1.1.2.jpg"),
+      getMediaUrl("media/portfolio/color-gradiant/c-slog-after_1.1.1.jpg"),
+      getMediaUrl("media/portfolio/color-gradiant/c-slog-node-tree.png"),
+      getMediaUrl("media/portfolio/color-gradiant/b-slog-before.jpg"),
+      getMediaUrl("media/portfolio/color-gradiant/b-slog-rec709.jpg"),
+      getMediaUrl("media/portfolio/color-gradiant/b-slog-after_1.1.1.jpg"),
+      getMediaUrl("media/portfolio/color-gradiant/b-slog-node-tree.png"),
+      getMediaUrl("media/portfolio/color-gradiant/a-slog-before.jpg"),
+      getMediaUrl("media/portfolio/color-gradiant/a-slog-rec709.jpg"),
+      getMediaUrl("media/portfolio/color-gradiant/a-slog-after.jpg"),
+      getMediaUrl("media/portfolio/color-gradiant/a-slog-node-tree.png"),
     ],
   },
   "personal-projects": {
@@ -78,7 +83,7 @@ const projectMediaMap: Record<string, { title: string; description: string; medi
     description:
       "A collection of self-initiated videos created for fun and exploration. These projects let me try new techniques, test ideas, and push my creativity without any brief or limitations.",
     media: [
-      "/media/portfolio/personal-projects/dhaw-hal-final.mp4",
+      getMediaUrl("media/portfolio/personal-projects/dhaw-hal-final.mp4"),
       "https://www.youtube.com/watch?v=HtTlBbgZNGk",
     ],
   },

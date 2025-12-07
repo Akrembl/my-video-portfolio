@@ -12,7 +12,7 @@ const HeroSection: React.FC = () => {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) video.play().catch(() => { });
+        if (entry.isIntersecting) video.play().catch(() => {});
         else video.pause();
       },
       { threshold: 0.5 }
@@ -21,6 +21,9 @@ const HeroSection: React.FC = () => {
     observer.observe(video);
     return () => observer.disconnect();
   }, []);
+
+  // Helper to get correct media URL
+  const getMediaUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
   return (
     <section className="min-h-screen w-full relative overflow-hidden bg-white px-6 py-20">
@@ -34,8 +37,7 @@ const HeroSection: React.FC = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-4xl md:text-5xl font-extrabold italic leading-tight">
-            Hi, I'm Akrem Ben Lagha —
-            <br />
+            Hi, I'm Akrem Ben Lagha —<br />
             a video editor with innovative vision.
           </h1>
 
@@ -58,11 +60,11 @@ const HeroSection: React.FC = () => {
           <motion.a
             href="#contact"
             className="
-    inline-flex items-center gap-2 
-    px-3 py-2 rounded-full
-    shadow-lg border border-black bg-white font-semibold
-    transition-all duration-300 hover:shadow-xl hover:-translate-y-1
-  "
+              inline-flex items-center gap-2 
+              px-3 py-2 rounded-full
+              shadow-lg border border-black bg-white font-semibold
+              transition-all duration-300 hover:shadow-xl hover:-translate-y-1
+            "
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
@@ -72,9 +74,6 @@ const HeroSection: React.FC = () => {
             <Mail className="w-4 h-4" />
             Contact Me
           </motion.a>
-
-
-
         </motion.div>
 
         {/* RIGHT SIDE VIDEO */}
@@ -86,7 +85,7 @@ const HeroSection: React.FC = () => {
         >
           <video
             ref={videoRef}
-            src="/media/portfolio/motion-final.mov"
+            src={getMediaUrl("media/portfolio/motion-final.mov")}
             className="w-full h-[400px] md:h-[500px] object-cover rounded-xl shadow-lg"
             loop
             muted
@@ -94,7 +93,6 @@ const HeroSection: React.FC = () => {
             controls
           />
         </motion.div>
-
       </div>
     </section>
   );
