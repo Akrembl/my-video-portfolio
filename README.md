@@ -17,7 +17,7 @@ A sleek, modern portfolio template built with React, Vite, and Framer Motion. Th
 - 🔍 Easy to customize
   
 ## 🛠️ Tech Stack
-
+ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 - React
 - Vite
 - TypeScript
