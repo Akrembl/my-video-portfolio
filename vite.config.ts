@@ -8,13 +8,12 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-  },
+  },  base:"/my-video-portfolio/",  
   plugins: [
     react(),
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
-  base:"/my-video-portfolio/",  
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
